@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+        android:id="@+id/year_of_match"
+        style="@style/TextView"
+        android:layout_marginTop="32dp"
+        android:text="2010"
+        app:layout_constraintBottom_toTopOf="@id/home_team_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_team_name"
+        style="@style/TextView.TeamsName"
+        android:text="Brazil"
+        app:layout_constraintStart_toStartOf="parent"
+        android:maxLines="1"
+        android:layout_width="140dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/stadium_name"
+        app:layout_constraintEnd_toStartOf="@+id/home_team_goals"
+        app:layout_constraintTop_toBottomOf="@+id/year_of_match" />
+
+    <TextView
+        android:id="@+id/home_team_goals"
+        style="@style/TextView"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@id/home_team_name"
+        app:layout_constraintEnd_toStartOf="@+id/space"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/year_of_match"
+        app:layout_constraintTop_toTopOf="@id/home_team_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/space"
+        style="@style/TextView"
+        android:text="-"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/home_team_name"
+        app:layout_constraintEnd_toStartOf="@+id/away_team_goals"
+        app:layout_constraintStart_toEndOf="@+id/home_team_goals"
+        app:layout_constraintTop_toTopOf="@id/home_team_name"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/away_team_goals"
+        style="@style/TextView"
+        android:text="7"
+        app:layout_constraintBottom_toBottomOf="@id/home_team_name"
+        app:layout_constraintEnd_toEndOf="@id/year_of_match"
+        app:layout_constraintStart_toEndOf="@+id/space"
+        app:layout_constraintTop_toTopOf="@id/home_team_name" />
+    <TextView
+        android:id="@+id/away_team_name"
+        style="@style/TextView.TeamsName"
+        android:text="Germany"
+        android:layout_width="140dp"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@id/home_team_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/away_team_goals"
+        app:layout_constraintTop_toTopOf="@id/home_team_name" />
+
+    <TextView
+        android:id="@+id/stadium_name"
+        style="@style/TextView"
+        android:text="stadium name"
+        android:gravity="center"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@+id/before_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_team_name" />
+<ImageButton
+    android:id="@+id/before_btn"
+    style="@style/buttton"
+    android:background="@drawable/ic_baseline_navigate_before_24"
+    app:layout_constraintHorizontal_chainStyle="spread_inside"
+    app:layout_constraintEnd_toStartOf="@id/next_btn"
+    app:layout_constraintTop_toBottomOf="@id/stadium_name"
+    app:layout_constraintBottom_toTopOf="@id/guideline"
+    app:layout_constraintStart_toStartOf="parent"/>
+    <ImageButton
+        android:id="@+id/next_btn"
+        style="@style/buttton"
+        android:background="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintStart_toEndOf="@id/before_btn"
+        app:layout_constraintTop_toTopOf="@id/before_btn"
+        app:layout_constraintBottom_toBottomOf="@id/before_btn"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
+</androidx.constraintlayout.widget.ConstraintLayout>
